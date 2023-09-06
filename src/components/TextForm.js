@@ -6,13 +6,13 @@ export default function TextForm(props) {
         let newText = text.toUpperCase();
         setText(newText);
     }
-    const handleOnChange = (event) => {
-        console.log("On Change");
-        setText(event.target.value);
-    }
     const handleLowClick = () => {
         let newText = text.toLowerCase();
         setText(newText);
+    }
+    const handleOnChange = (event) => {
+        console.log("On Change");
+        setText(event.target.value);
     }
     return (
         <>
@@ -24,9 +24,12 @@ export default function TextForm(props) {
                 <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to uppercase</button>
                 <button className="btn btn-primary mx-1" onClick={handleLowClick}>Convert to Lowercase</button>
             </div>
-            <div className="container">
+            <div className="container my-2">
                 <h1>Your text summary</h1>
-                <p>7646743 words and 8793478437 characters</p>
+                <p>{text.split(" ").length} words and {text.length} characters</p>
+                <p>{0.008 * text.split(" ").length} minutes read </p>
+                <h2>Preview</h2>
+                <p>{text}</p>
             </div>
         </>
     );
