@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 export default function TextForm(props) {
     const [text, setText] = useState("");
     const handleUpClick = () => {
-        console.log("Uppercase was clicked", text);
         let newText = text.toUpperCase();
         setText(newText);
     }
@@ -26,9 +25,7 @@ export default function TextForm(props) {
         let text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
-        console.log("Your text has been copied")
         document.getSelection().removeAllRanges();
-        console.log("The selection has been removed");
     }
     return (
         <>
