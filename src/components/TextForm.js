@@ -34,11 +34,11 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleOnChange}></textarea>
                 </div>
-                <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to uppercase</button>
-                <button className="btn btn-primary mx-1" onClick={handleLowClick}>Convert to Lowercase</button>
-                <button className="btn btn-primary mx-1" onClick={handleCaplitalizeClick}>Capitalize text</button>
-                <button className="btn btn-primary mx-1" onClick={handleCopyClick}>Copy text</button>
-                <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear text</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>Convert to uppercase</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleCaplitalizeClick}>Capitalize text</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleCopyClick}>Copy text</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear text</button>
             </div>
             <div className="container my-2">
                 <h2>Your text summary</h2>
