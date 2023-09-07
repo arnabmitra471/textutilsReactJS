@@ -6,13 +6,13 @@ export default function TextForm(props) {
         let newText = text.toUpperCase();
         setText(newText);
     }
-    const handleLowClick = () => {
-        let newText = text.toLowerCase();
-        setText(newText);
-    }
     const handleOnChange = (event) => {
         console.log("On Change");
         setText(event.target.value);
+    }
+    const handleLowClick = () => {
+        let newText = text.toLowerCase();
+        setText(newText);
     }
     const handleClearClick = ()=>{
         let newText = "";
@@ -21,6 +21,11 @@ export default function TextForm(props) {
     const handleCaplitalizeClick = ()=>{
         let newText = text.charAt(0).toUpperCase() + text.slice(1);
         setText(newText);
+    }
+    const handleCopyClick = ()=>{
+        let text = document.getElementById("myBox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
     }
     return (
         <>
@@ -31,8 +36,9 @@ export default function TextForm(props) {
                 </div>
                 <button className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to uppercase</button>
                 <button className="btn btn-primary mx-1" onClick={handleLowClick}>Convert to Lowercase</button>
-                <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear text</button>
                 <button className="btn btn-primary mx-1" onClick={handleCaplitalizeClick}>Capitalize text</button>
+                <button className="btn btn-primary mx-1" onClick={handleCopyClick}>Copy text</button>
+                <button className="btn btn-primary mx-1" onClick={handleClearClick}>Clear text</button>
             </div>
             <div className="container my-2">
                 <h2>Your text summary</h2>
