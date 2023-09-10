@@ -27,6 +27,11 @@ export default function TextForm(props) {
         navigator.clipboard.writeText(text.value);
         document.getSelection().removeAllRanges();
     }
+    const handleExtraSpaces = ()=>{
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+    }
+    
     return (
         <>
             <div className="container">
@@ -38,6 +43,7 @@ export default function TextForm(props) {
                 <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
                 <button className="btn btn-primary mx-1 my-1" onClick={handleCaplitalizeClick}>Capitalize text</button>
                 <button className="btn btn-primary mx-1 my-1" onClick={handleCopyClick}>Copy text</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
                 <button className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>Clear text</button>
             </div>
             <div className="container my-2">
